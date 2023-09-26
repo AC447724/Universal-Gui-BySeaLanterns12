@@ -1,0 +1,29 @@
+-- Animation Changer Script
+-- Place this code inside a LocalScript within a GUI
+
+-- Configuration
+local ANIMATION_PACK_ID = "INSERT_ANIMATION_PACK_ID_HERE" -- Animation pack ID to apply
+
+-- Function to change the animation pack
+local function changeAnimationPack(animationPackId)
+    local humanoid = game.Players.LocalPlayer.Character:FindFirstChildOfClass("Humanoid")
+    if humanoid and humanoid:IsA("Humanoid") then
+        humanoid.AnimationLoadType = Enum.AnimationLoadType.Manual
+        humanoid:ApplyDescription(game:GetService("AssetService"):GetAnimationPackDetails(animationPackId).Description)
+    end
+end
+
+-- GUI Setup
+local gui = script.Parent -- Reference to the GUI
+local textBox = gui:FindFirstChild("TextBox") -- Reference to the TextBox in the GUI
+
+-- Function to handle button click
+local function onButtonClicked()
+    local animationPackId = textBox.Text
+    changeAnimationPack(animationPackId)
+    print("Animation pack changed to ID: " .. animationPackId)
+end
+
+-- Event connection
+local button = gui:FindFirstChild("Button") -- Reference to the Button in the GUI
+button.MouseButton1Click:Connect(onButtonClicked)
