@@ -8,4 +8,4 @@ I am not responsible for being banned/Getting warnings
 
 **Warning** Use at your own risks as this could be bankable
 
-#Discord User Is 48be8 for contacting me use discord
+#Discord User Is c5xk for contacting me use discord
